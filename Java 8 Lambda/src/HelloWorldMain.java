@@ -47,12 +47,15 @@ public class HelloWorldMain {
 		/*
 		 * 3. creating inner class that implements Greeting interface
 		 */
-		Greeting greeting1 = new Greeting(){
+		Greeting implementedGreeting = new Greeting(){
 			public void perform() {
 				System.out.println("hello world");
 			}
 		};
-		greeting1.perform();
+		//one way to execute implementedGreeting
+		implementedGreeting.perform();
+		//second way to execute implementedGreeting
+		anyGreetingGreeter.greet(implementedGreeting);
 		/*
 		 * creating Lambda expression. 
 		 * several things to notice regarding lambda expressions:
