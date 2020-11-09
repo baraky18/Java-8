@@ -2,13 +2,13 @@
 public class HelloWorldMain {
 
 	
-	public class Greeter2{
+	public class AnyGreetingGreeter{
 		public void greet(Greeting greeting){
 			greeting.perform();
 		}
 	}
 	
-	public class Greeter1{
+	public class HelloWorldGreeter{
 		public void greet(){
 			System.out.println("hello world");
 		}
@@ -35,15 +35,15 @@ public class HelloWorldMain {
 		 * there are several ways to print "hello world" to the screen.
 		 * 1. creating class Greeter and print inside
 		 */
-		Greeter1 greeter1  = helloWorldMain.new Greeter1();
-		greeter1.greet();
+		HelloWorldGreeter helloWorldGreeter  = helloWorldMain.new HelloWorldGreeter();
+		helloWorldGreeter.greet();
 		/*
 		 * 2. pass to class Greeter behavior that greets in order to not change the Greeter class
-		 * each time you have anew greeting
+		 * each time you have a new greeting
 		 */
-		Greeter2 greeter2  = helloWorldMain.new Greeter2();
+		AnyGreetingGreeter anyGreetingGreeter  = helloWorldMain.new AnyGreetingGreeter();
 		Greeting greeting = helloWorldMain.new HelloWorldGreeting();
-		greeter2.greet(greeting);
+		anyGreetingGreeter.greet(greeting);
 		/*
 		 * 3. creating inner class that implements Greeting interface
 		 */
@@ -66,9 +66,9 @@ public class HelloWorldMain {
 		 * 5. this interface must have only one method   
 		 */
 		Greeting lambdaGreeting = () -> System.out.println("hello world");
-		greeter2.greet(lambdaGreeting);
+		anyGreetingGreeter.greet(lambdaGreeting);
 //		 another possible way to do it is the following:
-		greeter2.greet(() -> System.out.println("hello world"));
+		anyGreetingGreeter.greet(() -> System.out.println("hello world"));
 		
 		/*
 		 * Lambda expression that gets parameters looks like this:
